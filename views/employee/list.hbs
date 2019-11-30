@@ -1,0 +1,53 @@
+<script>
+function myFunction() {
+  window.print();
+}
+</script>
+<h3><a class="btn btn-secondary" href="/employee"><i class="fa fa-plus"></i> Create New</a> Student List</h3>
+<div class="table" height="250px">
+    <div class="container">
+        <div class="row justify-content-start">
+<table class="table" >
+    <thead>
+        <tr>
+            <th>USN</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Semester</th>
+            <th>Branch</th>
+             <th>Amount</th>
+            <th>Mobile</th>
+             <th>Bank Name</th>
+            <th>Account No</th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.usn}}</td>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.semester}}</td>
+            
+            <td>{{this.branch}}</td>
+             <td>{{this.amount}}</td>
+            <td>{{this.mobile}}</td>
+             <td></td>
+            <td></td>
+            
+            <td>
+                <a href="/employee/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/employee/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                
+            </td>
+        </tr>
+        {{/each}}
+      
+    </tbody>
+</table>
+  <button onclick="myFunction()">Print this page</button>
+</div>
+</div>
+</div>
